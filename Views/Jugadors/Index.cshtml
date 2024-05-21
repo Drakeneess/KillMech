@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KillMech.Models.Jugador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<p>
+    <a asp-action="VistaDesempenoJugadores">Graficos</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoJugador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TiempoJugado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoJugador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TiempoJugado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JugadorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JugadorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JugadorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

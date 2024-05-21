@@ -1,0 +1,115 @@
+﻿@model List<KillMech.Models.DificultadCapitulo>
+
+
+@{
+    ViewData["Title"] = "Gráficos de Dificultad por Capítulo";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div style="width: 45%; margin-bottom: 20px;">
+        <canvas id="horasPromedioCompletacionChart" width="400" height="400"></canvas>
+    </div>
+    <div style="width: 45%; margin-bottom: 20px;">
+        <canvas id="danoRecibidoPromedioChart" width="400" height="400"></canvas>
+    </div>
+    <div style="width: 45%; margin-bottom: 20px;">
+        <canvas id="porcentajeCompletadosChart" width="400" height="400"></canvas>
+    </div>
+    <div style="width: 45%; margin-bottom: 20px;">
+        <canvas id="indiceDificultadChart" width="400" height="400"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const rawData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+    const nombresCapitulos = rawData.map(data => data.NombreCapitulo);
+
+    const horasPromedio = rawData.map(data => data.HorasPromedioCompletacion);
+    const danoPromedio = rawData.map(data => data.DanoRecibidoPromedio);
+    const porcentajeCompletados = rawData.map(data => data.PorcentajeCompletados);
+    const indiceDificultad = rawData.map(data => data.IndiceDificultad);
+
+    const chartOptions = {
+        scales: {
+            r: {
+                angleLines: {
+                    display: true
+                },
+                suggestedMin: 0
+            }
+        },
+        elements: {
+            line: {
+                borderWidth: 3
+            }
+        }
+    };
+
+    new Chart(document.getElementById('horasPromedioCompletacionChart'), {
+        type: 'radar',
+        data: {
+            labels: nombresCapitulos,
+            datasets: [{
+                label: 'Horas Promedio de Completación',
+                data: horasPromedio,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: chartOptions
+    });
+
+    new Chart(document.getElementById('danoRecibidoPromedioChart'), {
+        type: 'radar',
+        data: {
+            labels: nombresCapitulos,
+            datasets: [{
+                label: 'Daño Recibido Promedio',
+                data: danoPromedio,
+                backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: chartOptions
+    });
+
+    new Chart(document.getElementById('porcentajeCompletadosChart'), {
+        type: 'radar',
+        data: {
+            labels: nombresCapitulos,
+            datasets: [{
+                label: 'Porcentaje Completados',
+                data: porcentajeCompletados,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: chartOptions
+    });
+
+    new Chart(document.getElementById('indiceDificultadChart'), {
+        type: 'radar',
+        data: {
+            labels: nombresCapitulos,
+            datasets: [{
+                label: 'Índice de Dificultad',
+                data: indiceDificultad,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: chartOptions
+    });
+</script>
+

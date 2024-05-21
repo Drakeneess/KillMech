@@ -1,0 +1,93 @@
+﻿@model KillMech.Models.DesempenoCapitulo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DesempenoCapitulo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Completo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Completo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TiempoCompletacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TiempoCompletacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DanoTotalHecho)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DanoTotalHecho)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DanoTotalRecibido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DanoTotalRecibido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EvasionesRealizadas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EvasionesRealizadas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DisparosRealizados)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DisparosRealizados)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DisparosAcertados)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DisparosAcertados)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TransformacionesRealizadas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TransformacionesRealizadas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DanoJetTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DanoJetTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DanoMechaTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DanoMechaTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nivel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nivel.NivelID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Partida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Partida.PartidaId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DesempenoCapituloId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

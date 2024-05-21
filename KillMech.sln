@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillMech", "KillMech.csproj", "{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E61A6FF-BF8D-417D-B409-BB01F912E07F}
+	EndGlobalSection
+EndGlobal
