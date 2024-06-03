@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Muertes por Coordenadas";
+}
+
+<h1 class="text-center mt-3 text-danger font-weight-bold display-4" style="text-shadow: 2px 2px 4px #000;">
+    @ViewData["Title"]
+</h1>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <canvas  id="heatmapCanvas"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get data from ViewBag
+    var xZones = @Html.Raw(Json.Serialize(ViewBag.XZones));
+    var yZones = @Html.Raw(Json.Serialize(ViewBag.YZones));
+    var numMuertes = @Html.Raw(Json.Serialize(ViewBag.NumMuertes));
+
+    // Prepare data for Chart.js
+    var data = {
+        datasets: [{
+            label: 'Número de Muertes',
+            data: xZones.map((x, index) => ({
+                x: x,
+                y: yZones[index],
+                r: numMuertes[index] * 2 // Ajusta el tamaño según sea necesario
+            })),
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    // Create the chart
+    var ctx = document.getElementById('heatmapCanvas').getContext('2d');
+    var heatmapChart = new Chart(ctx, {
+        type: 'bubble',
+        data: data,
+        options: {
+            scales: {
+                x: {
+                    type: 'linear',
+                    position: 'bottom'
+                },
+                y: {
+                    type: 'linear',
+                    position: 'left'
+                }
+            }
+        }
+    });
+</script>

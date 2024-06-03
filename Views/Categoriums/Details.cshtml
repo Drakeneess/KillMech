@@ -1,24 +1,27 @@
 ﻿@model KillMech.Models.Categorium
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de la Categoría";
 }
 
-<h1>Details</h1>
+<!-- Título con estilos de Bootstrap -->
+<h1 class="text-center mt-3" style="color: #e74c3c; font-size: 2.5em; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+    @ViewData["Title"]
+</h1>
 
 <div>
-    <h4>Categorium</h4>
+    <h4>Categoría</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.NombreCategoria)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NombreCategoria)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.CategoriaId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.CategoriaId" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
 </div>

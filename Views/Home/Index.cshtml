@@ -1,12 +1,128 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<KillMech.Models.partidas_ultimos_seis_meses>
+
+@{
+    ViewData["Title"] = "Partidas Últimos Seis Meses";
 }
 
+<h1 class="text-center mt-3" style="color: darkseagreen; font-size: 3em; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+    @ViewData["Title"]
+</h1>
 
-
-<body>
-    <div class="centered-image">
-        <img src="/logo/logo.png" alt="Descripción de la imagen">
+<div style="width: 80%; margin: auto; display: flex; align-items: center;">
+    <div style="flex: 1; padding-left: 20px;">
+        <img src="/Logo/logo.png" alt="Descripción de la Imagen" style="width: 100%; height: auto;">
     </div>
-</body>
+    <div style="flex: 3;">
+        <canvas id="myChart" style="width: 100%; height: 400px;"></canvas>
+    </div>
+</div>
 
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>JugadorID</th>
+            <th>Fecha Inicio</th>
+            <th>Campaña Completa</th>
+            <th>Mes</th>
+            <th>Número de Partidas</th>
+            <th>Partidas Completadas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var partida in Model)
+        {
+            <tr>
+                <td>@partida.JugadorID</td>
+                <td>@partida.FechaInicio</td>
+                <td>@partida.CampanaCompleta</td>
+                <td>@partida.Mes</td>
+                <td>@partida.NumeroDePartidas</td>
+                <td>@partida.PartidasCompletadas</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        @if (ViewBag.PageNumber > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("Index", new { pageNumber = ViewBag.PageNumber - 1, pageSize = ViewBag.PageSize })">Previous</a>
+            </li>
+        }
+        @for (int i = 1; i <= (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize); i++)
+        {
+            <li class="page-item @(i == ViewBag.PageNumber ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { pageNumber = i, pageSize = ViewBag.PageSize })">@i</a>
+            </li>
+        }
+        @if (ViewBag.PageNumber < (int)Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize))
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("Index", new { pageNumber = ViewBag.PageNumber + 1, pageSize = ViewBag.PageSize })">Next</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('myChart').getContext('2d');
+
+            const meses = @Html.Raw(Json.Serialize(ViewBag.Meses));
+            const numeroDePartidas = @Html.Raw(Json.Serialize(ViewBag.NumeroDePartidas));
+            const partidasCompletadas = @Html.Raw(Json.Serialize(ViewBag.PartidasCompletadas));
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: meses,
+                    datasets: [
+                        {
+                            label: 'Partidas Jugadas',
+                            data: numeroDePartidas,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            yAxisID: 'y-axis-1'
+                        },
+                        {
+                            label: 'Partidas Completadas',
+                            data: partidasCompletadas,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            yAxisID: 'y-axis-2'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 0 // Desactivar animaciones
+                    },
+                    scales: {
+                        yAxes: [
+                            {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                id: 'y-axis-1'
+                            },
+                            {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                id: 'y-axis-2',
+                                gridLines: {
+                                    drawOnChartArea: false
+                                }
+                            }
+                        ]
+                    }
+                }
+            });
+        });
+    </script>
+}

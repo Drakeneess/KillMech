@@ -1,0 +1,63 @@
+﻿@model IEnumerable<KillMech.Models.Muerte>
+
+@{
+    ViewData["Title"] = "Índice";
+}
+
+<h1>Índice</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+</p>
+<p>
+    <a asp-action="VistaHeatmap" class="btn btn-secondary">Gráficos</a>
+</p>
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TiempoMuerte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.X)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Y)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DesempenoNivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enemigo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TiempoMuerte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.X)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Y)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesempenoNivel.DesempenoCapituloId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Enemigo.EnemigoId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MuerteId" class="btn btn-warning btn-sm">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.MuerteId" class="btn btn-info btn-sm">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MuerteId" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

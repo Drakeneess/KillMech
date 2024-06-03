@@ -1,90 +1,101 @@
 ﻿@model KillMech.Models.DesempenoCapitulo
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
-<h1>Details</h1>
+<h1>Detalles del Desempeño de Capítulo</h1>
 
 <div>
-    <h4>DesempenoCapitulo</h4>
+    <h4>Desempeño de Capítulo</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Completo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.Completo)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.TiempoCompletacion)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.TiempoCompletacion)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.DanoTotalHecho)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.DanoTotalHecho)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.DanoTotalRecibido)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.DanoTotalRecibido)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.EvasionesRealizadas)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.EvasionesRealizadas)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.DisparosRealizados)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.DisparosRealizados)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.DisparosAcertados)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.DisparosAcertados)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.TransformacionesRealizadas)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.TransformacionesRealizadas)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.DanoJetTotal)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.DanoJetTotal)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.DanoMechaTotal)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.DanoMechaTotal)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nivel)
+
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Nivel.NivelID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.Nivel.NivelID)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Partida)
+
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Partida.PartidaId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.Partida.PartidaId)
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.DesempenoCapituloId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.DesempenoCapituloId" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
 </div>

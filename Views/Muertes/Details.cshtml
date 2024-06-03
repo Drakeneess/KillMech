@@ -1,0 +1,48 @@
+﻿@model KillMech.Models.Muerte
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Muerte</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TiempoMuerte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TiempoMuerte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.X)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.X)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Y)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Y)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DesempenoNivel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DesempenoNivel.DesempenoCapituloId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Enemigo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Enemigo.EnemigoId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MuerteId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

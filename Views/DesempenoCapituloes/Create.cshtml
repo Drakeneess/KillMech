@@ -1,86 +1,86 @@
 ﻿@model KillMech.Models.DesempenoCapitulo
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear";
 }
 
-<h1>Create</h1>
+<h1>Crear Desempeño de Capítulo</h1>
 
-<h4>DesempenoCapitulo</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="PartidaId" class="control-label"></label>
-                <select asp-for="PartidaId" class ="form-control" asp-items="ViewBag.PartidaId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="NivelId" class="control-label"></label>
-                <select asp-for="NivelId" class ="form-control" asp-items="ViewBag.NivelId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Completo" class="control-label"></label>
+                <label asp-for="Completo" class="control-label">Completo</label>
                 <input asp-for="Completo" class="form-control" />
                 <span asp-validation-for="Completo" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="TiempoCompletacion" class="control-label"></label>
+                <label asp-for="TiempoCompletacion" class="control-label">Tiempo de Completación</label>
                 <input asp-for="TiempoCompletacion" class="form-control" />
                 <span asp-validation-for="TiempoCompletacion" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DanoTotalHecho" class="control-label"></label>
+                <label asp-for="DanoTotalHecho" class="control-label">Daño Total Hecho</label>
                 <input asp-for="DanoTotalHecho" class="form-control" />
                 <span asp-validation-for="DanoTotalHecho" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DanoTotalRecibido" class="control-label"></label>
+                <label asp-for="DanoTotalRecibido" class="control-label">Daño Total Recibido</label>
                 <input asp-for="DanoTotalRecibido" class="form-control" />
                 <span asp-validation-for="DanoTotalRecibido" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="EvasionesRealizadas" class="control-label"></label>
+                <label asp-for="EvasionesRealizadas" class="control-label">Evasiones Realizadas</label>
                 <input asp-for="EvasionesRealizadas" class="form-control" />
                 <span asp-validation-for="EvasionesRealizadas" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DisparosRealizados" class="control-label"></label>
+                <label asp-for="DisparosRealizados" class="control-label">Disparos Realizados</label>
                 <input asp-for="DisparosRealizados" class="form-control" />
                 <span asp-validation-for="DisparosRealizados" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DisparosAcertados" class="control-label"></label>
+                <label asp-for="DisparosAcertados" class="control-label">Disparos Acertados</label>
                 <input asp-for="DisparosAcertados" class="form-control" />
                 <span asp-validation-for="DisparosAcertados" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="TransformacionesRealizadas" class="control-label"></label>
+                <label asp-for="TransformacionesRealizadas" class="control-label">Transformaciones Realizadas</label>
                 <input asp-for="TransformacionesRealizadas" class="form-control" />
                 <span asp-validation-for="TransformacionesRealizadas" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DanoJetTotal" class="control-label"></label>
+                <label asp-for="DanoJetTotal" class="control-label">Daño Jet Total</label>
                 <input asp-for="DanoJetTotal" class="form-control" />
                 <span asp-validation-for="DanoJetTotal" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DanoMechaTotal" class="control-label"></label>
+                <label asp-for="DanoMechaTotal" class="control-label">Daño Mecha Total</label>
                 <input asp-for="DanoMechaTotal" class="form-control" />
                 <span asp-validation-for="DanoMechaTotal" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

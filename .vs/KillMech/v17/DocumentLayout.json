@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\gitignore .txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:gitignore .txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-03T03:08:47.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "gitignore .txt",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\gitignore .txt",
+              "RelativeDocumentMoniker": "gitignore .txt",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\gitignore .txt",
+              "RelativeToolTip": "gitignore .txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-06-03T03:08:15.598Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

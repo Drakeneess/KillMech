@@ -8,37 +8,58 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/KillMech.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KillMech</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-house-door-fill"></i> KillMech
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-fill"></i> Home
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Jugadors" asp-action="Index">Jugadores</a>
+                            <a class="nav-link" asp-area="" asp-controller="Jugadors" asp-action="Index">
+                                <i class="bi bi-people-fill"></i> Jugadores
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categoriums" asp-action="Index">Categoria</a>
+                            <a class="nav-link" asp-area="" asp-controller="Categoriums" asp-action="Index">
+                                <i class="bi bi-tags-fill"></i> Categoría
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Enemigoes" asp-action="Index">Enemigos</a>
+                            <a class="nav-link" asp-area="" asp-controller="Enemigoes" asp-action="Index">
+                                <i class="bi bi-bug-fill"></i> Enemigos
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DesempenoCapituloes" asp-action="Index">Capitulos</a>
+                            <a class="nav-link" asp-area="" asp-controller="DesempenoCapituloes" asp-action="Index">
+                                <i class="bi bi-book-fill"></i> Capítulos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Muertes" asp-action="Index">
+                                <i class="fas fa-skull"></i> Muertes
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -46,9 +67,42 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - KillMech - 
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>KillMech</h5>
+                    <p>El juego definitivo de estrategia y aventura. Conéctate y enfréntate a enemigos en un mundo lleno de desafíos.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@TheDarknessadvance.com</li>
+                        <li>Teléfono: +123 456 7890</li>
+                        <li>Dirección: Calle Inventada 123, Ciudad Ficticia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 bg-black">
+            &copy; 2024 - KillMech - Todos los derechos reservados
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

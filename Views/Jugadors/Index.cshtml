@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<KillMech.Models.Jugador>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Índice";
 }
 
-<h1>Index</h1>
+<h1>Índice</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
 </p>
 <p>
-    <a asp-action="VistaDesempenoJugadores">Graficos</a>
+    <a asp-action="VistaDesempenoJugadores" class="btn btn-info">Gráficos</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.CodigoJugador)
@@ -24,27 +24,28 @@
             <th>
                 @Html.DisplayNameFor(model => model.TiempoJugado)
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoJugador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TiempoJugado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.JugadorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JugadorId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JugadorId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodigoJugador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TiempoJugado)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.JugadorId" class="btn btn-secondary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.JugadorId" class="btn btn-info">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.JugadorId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

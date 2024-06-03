@@ -64,12 +64,25 @@ public partial class KillmechContext : DbContext
 
     public virtual DbSet<DificultadCapitulo> DificultadCapitulos { get; set; }
 
+    public virtual DbSet<partidas_ultimos_seis_meses> Partidas_Ultimos_Seis_Meses { get; set; }
+
+    public virtual DbSet<zona_mas_muertes> Zona_Mas_Muertes { get; set; }   
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseMySql("server=localhost;port=3306;database=killmech;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<zona_mas_muertes>(entity =>
+        {
+            entity.HasNoKey();
+            entity.ToView("zona_mas_muertes");
+            entity.Property(e => e.XZone).HasColumnName("x_zone_start");
+            entity.Property(e => e.YZone).HasColumnName("y_zone_start");
+            entity.Property(e => e.NumMuertes).HasColumnName("num_muertes");
+        });
+
         modelBuilder.Entity<DificultadCapitulo>(entity =>
         {
             entity.HasNoKey(); // Indica que la entidad no tiene clave primaria porque es una vista
@@ -86,11 +99,21 @@ public partial class KillmechContext : DbContext
             entity.Property(e => e.IndiceDificultad).HasColumnName("IndiceDificultad").HasColumnType("decimal(18, 2)");
         });
 
+        modelBuilder.Entity<partidas_ultimos_seis_meses>(entity =>
+        {
+            entity.HasNoKey(); // Indica que la entidad no tiene clave primaria porque es una vista
+            entity.ToView("partidas_ultimos_seis_meses"); // Asegúrate de que el nombre de la vista coincida con la base de datos
+            entity.Property(e => e.PartidaID).HasColumnName("PartidaID");
+            entity.Property(e => e.JugadorID).HasColumnName("JugadorID");
+            entity.Property(e => e.FechaInicio).HasColumnName("fecha_inicio");
+            entity.Property(e => e.FechaFin).HasColumnName("fecha_fin");
+            entity.Property(e => e.CampanaCompleta).HasColumnName("campana_completa");
+            entity.Property(e => e.Mes).HasColumnName("Mes");
+            entity.Property(e => e.NumeroDePartidas).HasColumnName("NumeroDePartidas");
+            entity.Property(e => e.PartidasCompletadas).HasColumnName("PartidasCompletadas");
+        });
 
-
-
-
-        modelBuilder.Entity<desempeñoporjudador>(entity =>
+            modelBuilder.Entity<desempeñoporjudador>(entity =>
         {
             entity.HasNoKey(); // Indica que la entidad no tiene clave primaria
             entity.ToView("desempenoporjugador"); // Asegúrate de que el nombre de la vista coincida con la base de datos

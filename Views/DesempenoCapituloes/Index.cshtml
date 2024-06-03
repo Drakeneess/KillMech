@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<KillMech.Models.DesempenoCapitulo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Índice";
 }
 
-<h1>Index</h1>
+<h1>Índice</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
 </p>
 <p>
-    <a asp-action="VistaDificultadCapitulo">Graficos</a>
+    <a asp-action="VistaDificultadCapitulo" class="btn btn-info">Gráficos</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Completo)
@@ -51,54 +51,55 @@
             <th>
                 @Html.DisplayNameFor(model => model.Partida)
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Completo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TiempoCompletacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DanoTotalHecho)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DanoTotalRecibido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EvasionesRealizadas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DisparosRealizados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DisparosAcertados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TransformacionesRealizadas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DanoJetTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DanoMechaTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nivel.NivelID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Partida.PartidaId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DesempenoCapituloId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DesempenoCapituloId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DesempenoCapituloId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Completo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TiempoCompletacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DanoTotalHecho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DanoTotalRecibido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EvasionesRealizadas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisparosRealizados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisparosAcertados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransformacionesRealizadas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DanoJetTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DanoMechaTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nivel.NivelID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Partida.PartidaId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DesempenoCapituloId" class="btn btn-secondary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.DesempenoCapituloId" class="btn btn-info">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DesempenoCapituloId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

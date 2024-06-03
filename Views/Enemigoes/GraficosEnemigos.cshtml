@@ -4,8 +4,9 @@
     ViewData["Title"] = "Enemigos por Categoría";
 }
 
-<h1>@ViewData["Title"]</h1>
-
+<h1 class="text-center mt-3" style="color: #e74c3c; font-size: 2.5em; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+    @ViewData["Title"]
+</h1>
 <div style="display: flex; justify-content: center;">
     <div style="width: 60%;">
         <canvas id="enemigosPorCategoriaChart" width="400" height="400"></canvas>
@@ -15,7 +16,6 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     const rawData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
 

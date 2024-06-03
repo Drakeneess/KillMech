@@ -1,35 +1,37 @@
 ﻿@model IEnumerable<KillMech.Models.Categorium>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Índice de Categorías";
 }
 
-<h1>Index</h1>
+<h1 class="text-center mt-3" style="color: #e74c3c; font-size: 2.5em; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+    @ViewData["Title"]
+</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="text-center">
+    <a asp-action="Create" class="btn btn-primary">Crear Categoría</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreCategoria)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreCategoria)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoriaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoriaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoriaId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="container">
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.NombreCategoria)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.NombreCategoria)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CategoriaId" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.CategoriaId" class="btn btn-sm btn-info">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
