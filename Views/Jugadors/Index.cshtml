@@ -9,9 +9,16 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
 </p>
-<p>
-    <a asp-action="VistaDesempenoJugadores" class="btn btn-info">Gráficos</a>
-</p>
+
+<form asp-action="Index" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar por nombre" aria-label="Buscar" aria-describedby="basic-addon2" name="searchString" value="@ViewBag.SearchString" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+        </div>
+    </div>
+</form>
+
 <table class="table table-hover">
     <thead class="table-dark">
         <tr>
@@ -49,3 +56,26 @@
         }
     </tbody>
 </table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        @if (ViewBag.PageNumber > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("Index", new { searchString = ViewBag.SearchString, pageNumber = ViewBag.PageNumber - 1, pageSize = ViewBag.PageSize })">Anterior</a>
+            </li>
+        }
+        @for (int i = 1; i <= Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize); i++)
+        {
+            <li class="page-item @(i == ViewBag.PageNumber ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { searchString = ViewBag.SearchString, pageNumber = i, pageSize = ViewBag.PageSize })">@i</a>
+            </li>
+        }
+        @if (ViewBag.PageNumber < Math.Ceiling((double)ViewBag.TotalItems / ViewBag.PageSize))
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("Index", new { searchString = ViewBag.SearchString, pageNumber = ViewBag.PageNumber + 1, pageSize = ViewBag.PageSize })">Siguiente</a>
+            </li>
+        }
+    </ul>
+</nav>

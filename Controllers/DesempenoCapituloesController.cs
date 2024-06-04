@@ -18,12 +18,37 @@ namespace KillMech.Controllers
             _context = context;
         }
 
-        // GET: DesempenoCapituloes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string nivel, int page = 1)
         {
-            var killmechContext = _context.DesempenoCapitulos.Include(d => d.Nivel).Include(d => d.Partida);
-            return View(await killmechContext.ToListAsync());
+            int pageSize = 3;
+            int startIndex = (page - 1) * pageSize;
+
+            IQueryable<DesempenoCapitulo> desempenoCapitulosQuery = _context.DesempenoCapitulos
+                .Include(d => d.Nivel)
+                .Include(d => d.Partida);
+
+            // Filtrar por nivel si se especifica
+            if (!string.IsNullOrEmpty(nivel))
+            {
+                desempenoCapitulosQuery = desempenoCapitulosQuery.Where(d => d.Nivel.Nombre == nivel);
+            }
+
+            var desempenoCapitulos = await desempenoCapitulosQuery
+                .Skip(startIndex)
+                .Take(pageSize)
+                .ToListAsync();
+
+            int totalDesempenoCapitulos = await desempenoCapitulosQuery.CountAsync();
+            int totalPages = (int)Math.Ceiling((double)totalDesempenoCapitulos / pageSize);
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+
+            return View(desempenoCapitulos);
         }
+
+
+
 
         // GET: DesempenoCapituloes/Details/5
         public async Task<IActionResult> Details(int? id)

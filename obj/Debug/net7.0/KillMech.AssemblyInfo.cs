@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KillMech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23e8a2cef29e5b5fefe4fb14d59ef4aa1b1301f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f37b0b9c9bc7139210ce4c118d1ea8ceeeafbf8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("KillMech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KillMech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

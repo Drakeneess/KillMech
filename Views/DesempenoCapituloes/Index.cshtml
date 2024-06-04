@@ -4,7 +4,7 @@
     ViewData["Title"] = "Índice";
 }
 
-<h1>Índice</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
@@ -12,6 +12,15 @@
 <p>
     <a asp-action="VistaDificultadCapitulo" class="btn btn-info">Gráficos</a>
 </p>
+
+<form asp-controller="DesempenoCapituloes" asp-action="Index" method="get">
+    <div class="form-group">
+        <label for="nivel">Buscar por Nivel:</label>
+        <input type="text" id="nivel" name="nivel" class="form-control" placeholder="Ingrese el nivel">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
 <table class="table table-hover">
     <thead class="table-dark">
         <tr>
@@ -103,3 +112,17 @@
         }
     </tbody>
 </table>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

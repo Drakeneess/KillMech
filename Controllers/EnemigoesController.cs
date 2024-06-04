@@ -7,23 +7,46 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KillMech.Models;
 
+
 namespace KillMech.Controllers
 {
     public class EnemigoesController : Controller
     {
         private readonly KillmechContext _context;
+        private readonly ILogger<EnemigoesController> _logger;
 
-        public EnemigoesController(KillmechContext context)
+        public EnemigoesController(KillmechContext context, ILogger<EnemigoesController> logger)
         {
             _context = context;
+            _logger = logger; // Asigna el valor de logger a _logger
+        }
+        // GET: Enemigoes
+        // GET: Enemigoes
+        public async Task<IActionResult> Index(string searchString, int page = 1)
+        {
+            int pageSize = 10;
+            int startIndex = (page - 1) * pageSize;
+
+            // Consulta filtrada por nombre del enemigo si hay un término de búsqueda
+            var enemigosQuery = _context.Enemigos.Include(e => e.Categoria).AsQueryable();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                enemigosQuery = enemigosQuery.Where(e => e.Nombre.Contains(searchString));
+            }
+
+            var enemigosPaginados = await enemigosQuery.Skip(startIndex).Take(pageSize).ToListAsync();
+
+            // Cuenta el total de elementos después de aplicar el filtro
+            int totalEnemigos = await enemigosQuery.CountAsync();
+
+            int totalPages = (int)Math.Ceiling((double)totalEnemigos / pageSize);
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+
+            return View(enemigosPaginados);
         }
 
-        // GET: Enemigoes
-        public async Task<IActionResult> Index()
-        {
-            var killmechContext = _context.Enemigos.Include(e => e.Categoria);
-            return View(await killmechContext.ToListAsync());
-        }
 
         // GET: Enemigoes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -180,6 +203,8 @@ namespace KillMech.Controllers
             // Retorna la vista 'GraficosEnemigos' con el modelo 'viewModel'
             return View("GraficosEnemigos", viewModel);
         }
+
+      
 
 
     }

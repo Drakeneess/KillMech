@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\views\\jugadors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:views\\jugadors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\gitignore .txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:gitignore .txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\controllers\\jugadorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:controllers\\jugadorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\controllers\\muertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:controllers\\muertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\controllers\\desempenocapituloescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:controllers\\desempenocapituloescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\views\\muertes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:views\\muertes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\views\\desempenocapituloes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:views\\desempenocapituloes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\views\\enemigoes\\graficosenemigos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:views\\enemigoes\\graficosenemigos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\controllers\\enemigoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:controllers\\enemigoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|c:\\users\\victus\\desktop\\nueva carpeta (3)\\views\\enemigoes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D530A8EC-5AB0-4614-9C03-3FE2EC36A8B5}|KillMech.csproj|solutionrelative:views\\enemigoes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +51,119 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-03T03:08:47.329Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Jugadors\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Jugadors\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Jugadors\\Index.cshtml*",
+              "RelativeToolTip": "Views\\Jugadors\\Index.cshtml*",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T17:56:13.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "gitignore .txt",
-              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\gitignore .txt",
-              "RelativeDocumentMoniker": "gitignore .txt",
-              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\gitignore .txt",
-              "RelativeToolTip": "gitignore .txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-06-03T03:08:15.598Z"
+              "Title": "JugadorsController.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\JugadorsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\JugadorsController.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\JugadorsController.cs",
+              "RelativeToolTip": "Controllers\\JugadorsController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:55:49.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MuertesController.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\MuertesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MuertesController.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\MuertesController.cs",
+              "RelativeToolTip": "Controllers\\MuertesController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAcwBYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:49:26.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Muertes\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Muertes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Muertes\\Index.cshtml",
+              "RelativeToolTip": "Views\\Muertes\\Index.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T17:48:43.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DesempenoCapituloesController.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\DesempenoCapituloesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DesempenoCapituloesController.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\DesempenoCapituloesController.cs",
+              "RelativeToolTip": "Controllers\\DesempenoCapituloesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:36:52.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\DesempenoCapituloes\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DesempenoCapituloes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\DesempenoCapituloes\\Index.cshtml",
+              "RelativeToolTip": "Views\\DesempenoCapituloes\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T17:36:26.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GraficosEnemigos.cshtml",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Enemigoes\\GraficosEnemigos.cshtml",
+              "RelativeDocumentMoniker": "Views\\Enemigoes\\GraficosEnemigos.cshtml",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Enemigoes\\GraficosEnemigos.cshtml",
+              "RelativeToolTip": "Views\\Enemigoes\\GraficosEnemigos.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T16:53:11.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EnemigoesController.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\EnemigoesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EnemigoesController.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Controllers\\EnemigoesController.cs",
+              "RelativeToolTip": "Controllers\\EnemigoesController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAmwC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T16:44:10.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Enemigoes\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Enemigoes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VICTUS\\Desktop\\Nueva carpeta (3)\\Views\\Enemigoes\\Index.cshtml",
+              "RelativeToolTip": "Views\\Enemigoes\\Index.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAcwEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T16:32:12.246Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -19,9 +19,28 @@ namespace KillMech.Controllers
         }
 
         // GET: Jugadors
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, int pageNumber = 1, int pageSize = 10)
         {
-            return View(await _context.Jugadors.ToListAsync());
+            var jugadores = from j in _context.Jugadors select j;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                jugadores = jugadores.Where(j => j.Nombre.Contains(searchString));
+            }
+
+            var totalItems = await jugadores.CountAsync();
+            var viewModel = await jugadores
+                .OrderBy(j => j.Nombre)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.SearchString = searchString;
+            ViewBag.PageNumber = pageNumber;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalItems = totalItems;
+
+            return View(viewModel);
         }
 
         // GET: Jugadors/Details/5

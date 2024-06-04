@@ -18,13 +18,36 @@ namespace KillMech.Controllers
             _context = context;
         }
 
-        // GET: Muertes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, int page = 1)
         {
-            var killmechContext = _context.Muertes.Include(m => m.DesempenoNivel).Include(m => m.Enemigo);
-            return View(await killmechContext.ToListAsync());
-        }
+            int pageSize = 8;
+            int startIndex = (page - 1) * pageSize;
 
+            var muertesQuery = _context.Muertes
+                .Include(m => m.DesempenoNivel)
+                .Include(m => m.Enemigo)
+                .AsQueryable();
+
+            // Filtrar por nombre de enemigo si se especifica
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                muertesQuery = muertesQuery.Where(m => m.Enemigo.Nombre.Contains(searchString));
+            }
+
+            var muertes = await muertesQuery
+                .Skip(startIndex)
+                .Take(pageSize)
+                .ToListAsync();
+
+            int totalMuertes = await muertesQuery.CountAsync();
+            int totalPages = (int)Math.Ceiling((double)totalMuertes / pageSize);
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.SearchString = searchString;
+
+            return View(muertes);
+        }
         // GET: Muertes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
